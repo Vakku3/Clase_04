@@ -46,9 +46,6 @@
             select("#level").html(level);
           
           var elAside = select("aside");
-          
-          
-          
             createImg(datosArreglados[x].img).parent(elAside).style("width", "100%");
             createA("page.html?data=" + name, "siguiente página").parent("next");
             createA("page.html?data=" + "NombreDelDigimon", "Acepto, dibujaré a " + name + " ✍").parent("accept");
