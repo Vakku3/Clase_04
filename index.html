@@ -35,21 +35,21 @@
         var losMinutos = new Date().getMinutes();
     
 
-        function preload() {datos = loadJSON("https://digimon-api.vercel.app/api/digimon");}
-        function setup() { datosArreglados = Object.values(datos); x = Math.round(random(0, (datosArreglados.length)-1));
-          
-          var level = datosArreglados[x].level;
-          var name = datosArreglados[x].name;
-          
-            select("#title").html(name);
-            select("#time").html(lasHoras + ":" + losMinutos);
-            select("#level").html(level);
-          
-          var elAside = select("aside");
-            createImg(datosArreglados[x].img).parent(elAside).style("width", "100%");
-            createA("page.html?data=" + name, "siguiente página").parent("next");
-            createA("page.html?data=" + "NombreDelDigimon", "Acepto, dibujaré a " + name + " ✍").parent("accept");
-            noCanvas();
+ function preload() {
+                datos = loadJSON("https://digimon-api.vercel.app/api/digimon");
+            }
+            function setup() {
+                datosArreglados = Object.values(datos);
+                x = Math.floor(random(0, (datosArreglados.length)-1));
+                select("#title").html(datosArreglados[x].name);
+                select("#time").html(lasHoras + ":" + losMinutos);
+                select("#level").html(datosArreglados[x].level);
+                var elAside = select("aside");
+                createImg(datosArreglados[x].img).parent(elAside).style("width", "100%");
+                var Nombre = datosArreglados[x].name;
+                createA("page.html?data=" + Nombre, "siguiente página").parent("next");
+                createA("page.html?data=" + Nombre, "Acepto, dibujaré a " + Nombre + " ✍").parent("accept");
+                noCanvas();
         }
     </script>
   </body>
