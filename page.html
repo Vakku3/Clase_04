@@ -12,7 +12,7 @@
         <footer>
             <div><a href="index.html">🔙 volver</a></div>
             <div id="controles"></div>
-            <div><a href="#" id="descargar">✅ descargar</a></div>
+            <div><a href="#" id="descargar">⏬ descargar</a></div>
             <div><a href="#" id="borrar">🔄 borrar todo</a></div>
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -25,7 +25,7 @@
                 var title = select("header");
                 createElement("h1", "Aceptaste dibujar a " + palabra_pasada).parent(title);
                 var descarga = select("#descargar");
-                descarga.mousePressed(EstaNoEs);
+                descarga.mousePressed(descargalo);
                 var borra = select("#borrar");
                 borra.mousePressed(background);
                 elColor = createColorPicker("#000000").parent("controles");
@@ -42,7 +42,7 @@
     }
             }
 
-            function descargar() {
+            function descargalo() {
                 saveCanvas(palabra_pasada, "jpg");
             }
 
