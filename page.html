@@ -27,7 +27,7 @@
                 var descarga = select("#descargar");
                 descarga.mousePressed(EstaNoEs);
                 var borra = select("#borrar");
-                borra.mousePressed(EstaNoEs);
+                borra.mousePressed(background);
                 elColor = createColorPicker("#000000").parent("controles");
                 elSlider = createSlider(1, 5, 3).parent("controles");
                 createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
@@ -47,9 +47,13 @@
             }
 
             function borrador() {
-                background("#eceff1");
+                background("ddd");
 }
 
+function EstaNoEs(){
+                select("h1").html("Esta no es la función para tal mousePressed");
+                background(random(0,255),random(0,255),random(0,255));
+            
         </script>
     </body>
 </html>
