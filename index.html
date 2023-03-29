@@ -31,9 +31,8 @@
         var datos;
         var datosArreglados;
         var x = 1;
-        var lasHoras = "HH";
-        var losMinutos = "MM";
-      var NombreDelDigimon;
+        var lasHoras = new Date().getHours();
+        var losMinutos = new Date().getMinutes();
 
         function preload() {
             datos = loadJSON("https://digimon-api.vercel.app/api/digimon");
