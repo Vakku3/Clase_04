@@ -10,10 +10,10 @@
     <body>
         <header></header>
         <footer>
-            <div><a href="index.html">💸 volver</a></div>
+            <div><a href="index.html">🔙 volver</a></div>
             <div id="controles"></div>
-            <div><a href="#" id="descargar">🧶 descargar</a></div>
-            <div><a href="#" id="borrar">🔫 borrar todo</a></div>
+            <div><a href="#" id="descargar">✅ descargar</a></div>
+            <div><a href="#" id="borrar">🔄 borrar todo</a></div>
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
@@ -38,8 +38,8 @@
                 stroke(elColor.color());
                 strokeWeight(elSlider.value());
                 if (mouseIsPressed) {
-                    //aquí falta algo
-                }
+        line(pmouseX, pmouseY, mouseX, mouseY);
+    }
             }
 
             function descargador() {
@@ -47,8 +47,8 @@
             }
 
             function borrador() {
-                //aquí también falta algo
-            }
+                background("#eceff1");
+}
 
             function EstaNoEs(){
                 select("h1").html("Esta no es la función para tal mousePressed");
