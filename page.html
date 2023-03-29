@@ -22,27 +22,18 @@
         </footer>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.6.0/p5.min.js" integrity="sha512-3RlxD1bW34eFKPwj9gUXEWtdSMC59QqIqHnD8O/NoTwSJhgxRizdcFVQhUMFyTp5RwLTDL0Lbcqtl8b7bFAzog==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
-            var palabra_pasada = new URLSearchParams(window.location.search).get('data');
-            var elColor;
-            var elSlider;
-            
-            function setup() {
+                       function setup() {
                 var title = select("header");
                 createElement("h1", "Aceptaste dibujar a " + palabra_pasada).parent(title);
                 var descarga = select("#descargar");
-                descarga.mousePressed(descargalo);
-               
+                descarga.mousePressed(descargador);
                 var borra = select("#borrar");
                 borra.mousePressed(borrador);
-                
                 elColor = createColorPicker("#000000").parent("controles");
                 elSlider = createSlider(1, 5, 3).parent("controles");
                 createCanvas(windowWidth, windowHeight).position(0, 0).style("z-index", -1);
-                background("#ddd");
-                elColor = createColorPicker("#000000").parent("controles");
-                elSlider = createSlider(1, 5, 3).parent("controles");
-            }
-
+                background("#efebe9");
+                           
             function draw() {
                 stroke(elColor.color());
                 strokeWeight(elSlider.value());
